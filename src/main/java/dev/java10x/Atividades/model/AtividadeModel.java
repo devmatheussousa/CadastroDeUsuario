@@ -3,7 +3,7 @@ package dev.java10x.Atividades.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_atividade")
+@Table(name = "tb_atividade_registration")
 public class AtividadeModel {
 
     @Id
