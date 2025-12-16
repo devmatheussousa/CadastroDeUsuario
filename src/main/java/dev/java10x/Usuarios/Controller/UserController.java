@@ -1,4 +1,4 @@
-package dev.java10x;
+package dev.java10x.Usuarios.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
