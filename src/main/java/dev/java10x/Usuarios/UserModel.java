@@ -1,4 +1,4 @@
-package dev.java10x.Usuarios.model;
+package dev.java10x.Usuarios;
 /*
     Definir a entidade User, representando um colaborador do sistema, contendo atributos como nome, department, position e technical skills.
      */
