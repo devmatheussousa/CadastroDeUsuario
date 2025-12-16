@@ -11,13 +11,13 @@ public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id; //identificador único do usuário
-    String name; //nome ex: joão da silva
-    String department; //departamento ex: tecnologia da informação
-    String position; //posição ex: desenvolvedor júnior
-    String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
+    private Long id; //identificador único do usuário
+    private String name; //nome ex: joão da silva
+    private String department; //departamento ex: tecnologia da informação
+    private String position; //posição ex: desenvolvedor júnior
+    private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
 
-    public UserModel() {
+    protected UserModel() {
 
     }
 
