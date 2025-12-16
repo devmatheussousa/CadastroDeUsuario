@@ -37,7 +37,9 @@ src/
  ├── main/
  │   ├── java/
  │   │   └── org.example
- │   │       ├── controller   # Camada de Controllers (REST)
+ │   │       ├── controller 
+                      └──UserController
+                      
  │   │       ├── service      # Regras de negócio
  │   │       ├── repository   # Acesso a dados
  │   │       └── model        # Entidades
