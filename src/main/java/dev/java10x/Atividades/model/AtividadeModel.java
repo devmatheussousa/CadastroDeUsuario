@@ -1,5 +1,6 @@
 package dev.java10x.Atividades.model;
 
+import dev.java10x.Usuarios.UserModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,8 @@ public class AtividadeModel {
     private String description; // e.g., "Criar a funcionalidade de login usando Spring Security"
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
     private String status; // e.g., "Pendente", "Em andamento", "Concluído"
+    @ManyToOne
+    private UserModel user;
 
     protected AtividadeModel() {
     }
@@ -22,6 +25,8 @@ public class AtividadeModel {
         this.description = description;
         this.status = status;
     }
+
+
 
     public Long getId() {
         return id;
