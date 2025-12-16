@@ -3,7 +3,7 @@ package dev.java10x.Usuarios;
     Definir a entidade User, representando um colaborador do sistema, contendo atributos como nome, department, position e technical skills.
      */
 
-import dev.java10x.Atividades.AtividadeModel;
+import dev.java10x.Atividades.model.AtividadeModel;
 import jakarta.persistence.*;
 
 import java.util.List;

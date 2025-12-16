@@ -1,4 +1,4 @@
-package dev.java10x.Atividades;
+package dev.java10x.Atividades.model;
 
 import jakarta.persistence.*;
 
