@@ -13,17 +13,16 @@ public class AtividadeModel {
     private String name; // e.g., "Implementar login"
     private String description; // e.g., "Criar a funcionalidade de login usando Spring Security"
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
-    private String status; // e.g., "Pendente", "Em andamento", "Concluído"
     @ManyToOne
     private UserModel user;
 
     protected AtividadeModel() {
     }
 
-    public AtividadeModel(String name, String description, String status) {
+    public AtividadeModel(String name, String description, String type) {
         this.name = name;
         this.description = description;
-        this.status = status;
+        this.type = type;
     }
 
 
@@ -50,13 +49,5 @@ public class AtividadeModel {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }
