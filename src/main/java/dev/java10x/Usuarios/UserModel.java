@@ -21,9 +21,16 @@ public class UserModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; //identificador único do usuário
+
     private String name; //nome ex: joão da silva
+
+    @Column(unique = true)
+    private String email; //email ex:
+
     private String department; //departamento ex: tecnologia da informação
+
     private String position; //posição ex: desenvolvedor júnior
+
     private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
 
     // Muitos usuários podem estar associados a uma única atividade
