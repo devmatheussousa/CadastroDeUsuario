@@ -10,10 +10,15 @@ public class AtividadeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // Identificador único da atividade
+
     private String name; // e.g., "Implementar login"
+
     private String description; // e.g., "Criar a funcionalidade de login usando Spring Security"
+
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
+
     @ManyToOne
+    @JoinColumn(name = "user_registration_id")
     private UserModel user;
 
     protected AtividadeModel() {

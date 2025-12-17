@@ -19,6 +19,8 @@ public class UserModel {
     private String department; //departamento ex: tecnologia da informação
     private String position; //posição ex: desenvolvedor júnior
     private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
+
+    @OneToMany(mappedBy = "tb_user_registration",cascade = CascadeType.ALL) //Relacionamento um-para-muitos com AtividadeModel
     List<AtividadeModel> listaAtividades;
 
     protected UserModel() {
