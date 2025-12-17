@@ -20,8 +20,10 @@ public class UserModel {
     private String position; //posição ex: desenvolvedor júnior
     private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
 
-    @OneToMany(mappedBy = "tb_user_registration",cascade = CascadeType.ALL) //Relacionamento um-para-muitos com AtividadeModel
-    List<AtividadeModel> listaAtividades;
+    // Muitos usuários podem estar associados a uma única atividade
+    @ManyToOne
+    @JoinColumn(name = "atividade_registration_id") //chave estrangeira para a tabela de atividades
+    private AtividadeModel atividade;
 
     protected UserModel() {
 

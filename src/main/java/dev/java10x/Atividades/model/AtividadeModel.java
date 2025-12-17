@@ -3,6 +3,8 @@ package dev.java10x.Atividades.model;
 import dev.java10x.Usuarios.UserModel;
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_atividade_registration")
 public class AtividadeModel {
@@ -17,9 +19,10 @@ public class AtividadeModel {
 
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
 
-    @ManyToOne
-    @JoinColumn(name = "user_registration_id")
-    private UserModel user;
+
+    //uma atividade pode ter muitos usuários associados a ela
+    @OneToMany(mappedBy = "atividade",cascade = CascadeType.ALL) //Relacionamento um-para-muitos com AtividadeModel
+    List<UserModel> user; // Lista de usuários associados a esta atividade
 
     protected AtividadeModel() {
     }
