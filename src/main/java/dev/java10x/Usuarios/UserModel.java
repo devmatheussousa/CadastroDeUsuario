@@ -3,11 +3,9 @@ package dev.java10x.Usuarios;
     Definir a entidade User, representando um colaborador do sistema, contendo atributos como nome, department, position e technical skills.
      */
 
-import dev.java10x.Atividades.model.AtividadeModel;
+import dev.java10x.Atividades.AtividadeModel;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.List;
 
 @Entity //Anotação que indica que esta classe é uma entidade JPA
 @Table(name = "tb_user_registration") //Anotação que define o nome da tabela no banco de dados
