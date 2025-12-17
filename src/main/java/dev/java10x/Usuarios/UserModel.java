@@ -5,10 +5,7 @@ package dev.java10x.Usuarios;
 
 import dev.java10x.Atividades.model.AtividadeModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
