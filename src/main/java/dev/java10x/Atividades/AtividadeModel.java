@@ -19,12 +19,16 @@ public class AtividadeModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // Identificador único da atividade
 
+    @Column(name = "name")
     private String name; // e.g., "Implementar login"
 
+    @Column(name = "description", length = 1000)
     private String description; // e.g., "Criar a funcionalidade de login usando Spring Security"
 
+    @Column(name = "type")
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
 
+    @Column(name = "img_url")
     private String imgUrl;
 
     //uma atividade pode ter muitos usuários associados a ela
