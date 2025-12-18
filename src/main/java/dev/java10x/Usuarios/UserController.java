@@ -10,7 +10,7 @@ public class UserController {
 
     @GetMapping("/welcome")
     public String boasVinda(){
-        return "Bem-vindo ao sistema de cadastro de usuários!";
+        return "Bem-vindo ao sistema de cadastro de usuários! ";
     }
 
 }

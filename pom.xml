@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- ✅ PARENT REAL E EXISTENTE -->
+    <!-- 🔒 Spring Boot BOM (gerencia versões seguras) -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -18,41 +18,42 @@
     <artifactId>CadastroDeUsuario</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>CadastroDeUsuario</name>
-    <description>Uma API para cadastro de usuários</description>
+    <description>API para cadastro de usuários</description>
 
     <properties>
+        <!-- 🔒 Java LTS atual -->
         <java.version>21</java.version>
     </properties>
 
     <dependencies>
 
-        <!-- ✅ WEB (inclui MVC corretamente) -->
+        <!-- 🌐 Web / REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- ✅ JPA -->
+        <!-- 🗄️ JPA / Hibernate -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- ✅ H2 -->
+        <!-- 🧪 H2 (somente DEV / TEST) -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- ✅ LOMBOK -->
+        <!-- 🧰 Lombok (compile only) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <scope>provided</scope>
         </dependency>
 
-        <!-- ✅ DEVTOOLS -->
+        <!-- 🔁 DevTools (DEV apenas) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -60,7 +61,7 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- ✅ TESTES (único correto) -->
+        <!-- 🧪 Testes -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -72,7 +73,7 @@
     <build>
         <plugins>
 
-            <!-- ✅ COMPILER -->
+            <!-- 🧠 Compiler Java 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -87,7 +88,7 @@
                 </configuration>
             </plugin>
 
-            <!-- ✅ SPRING BOOT -->
+            <!-- 🚀 Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
