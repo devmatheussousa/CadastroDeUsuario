@@ -25,6 +25,7 @@ public class AtividadeModel {
 
     private String type; // e.g., "Tarefa", "Bug", "Melhoria"
 
+    private String imgUrl;
 
     //uma atividade pode ter muitos usuários associados a ela
     @OneToMany(mappedBy = "atividade",cascade = CascadeType.ALL) //Relacionamento um-para-muitos com AtividadeModel
