@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UserController {
 
+    //Mock de rota de boas vindas e retorno de mensagem
+
     @GetMapping("/welcome")
     public String boasVinda(){
         return "Bem-vindo ao sistema de cadastro de usuários! ";
