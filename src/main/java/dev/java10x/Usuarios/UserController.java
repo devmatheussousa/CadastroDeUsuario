@@ -1,16 +1,18 @@
 package dev.java10x.Usuarios;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@RequiredArgsConstructor
 public class UserController {
 
     //Mock de rota de boas vindas e retorno de mensagem
 
-    private UserService userService;
+    private final UserService userService;
 
     /*
     CRUD - Create, Read, Update, Delete
