@@ -27,12 +27,6 @@ public class UserController {
         return userService.criarNovoUsuario(userModel);
     }
 
-    //procurar Usuario por id (GET - Read)
-    @GetMapping("/buscar")
-    public String buscarUsuario(){
-        return "Usuario encontrado";
-    }
-
     //Mostrar todos os Usuarios (GET - Read)
     @GetMapping("/todos")
     public List<UserModel> mostrarUsuarios(){
@@ -54,9 +48,9 @@ public class UserController {
     }
 
     //Deletar Usuario (DELETE - Delete)
-    @DeleteMapping("/deletar/id")
-    public String deletarUsuarioPorId(){
-        return "Usuario deletado por id com sucesso";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarUsuarioPorId(@PathVariable Long id){
+        userService.deletarUsuarioPorId(id);
     }
 
 }

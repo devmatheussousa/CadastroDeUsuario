@@ -46,6 +46,17 @@ public class UserService {
         return userRepository.save(userModel);
     }
 
+    //deletar um usuário por id
+    //criar um mét.odo para deletar um usuário por id
+    public void deletarUsuarioPorId(Long id){
+        //verificar se o usuário existe
+        if(userRepository.existsById(id)){
+            userRepository.deleteById(id);
+        }else{
+            throw new RuntimeException("Usuário não encontrado");
+        }
+    }
+
 
 
 
