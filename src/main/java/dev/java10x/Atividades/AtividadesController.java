@@ -38,9 +38,9 @@ public class AtividadesController {
         return "Atividade atualizada";
     }
 
-    @DeleteMapping
-    public String deletarAtividade(){
-        return "Atividade deletada";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarAtividade(@PathVariable Long id){
+        atividadeService.deletarAtividadePorId(id);
     }
 
 }

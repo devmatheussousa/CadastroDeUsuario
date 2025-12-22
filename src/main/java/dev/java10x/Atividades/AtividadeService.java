@@ -34,6 +34,15 @@ public class AtividadeService {
         return atividadeRepository.save(atividadeModel);
     }
 
+    //deletar um atividade
+    public void deletarAtividadePorId(Long id){
+        if(atividadeRepository.existsById(id)){
+            atividadeRepository.deleteById(id);
+        }else{
+            throw new RuntimeException("Atividade não encontrada");
+        }
+    }
+
 
 
 
