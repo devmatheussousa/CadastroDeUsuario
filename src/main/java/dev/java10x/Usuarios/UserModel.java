@@ -36,4 +36,6 @@ public class UserModel {
     @JoinColumn(name = "atividades_id") //Foreing Key ou chave estrangeira para a tabela de atividades
     private AtividadeModel atividade;
 
+
+
 }
