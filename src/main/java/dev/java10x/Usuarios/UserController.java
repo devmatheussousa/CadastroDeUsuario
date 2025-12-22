@@ -2,16 +2,15 @@ package dev.java10x.Usuarios;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
     //Mock de rota de boas vindas e retorno de mensagem
 
-    @GetMapping("/welcome")
-    public String boasVinda(){
-        return "Bem-vindo ao sistema de cadastro de usuários! ";
-    }
+    private UserService userService;
 
     /*
     CRUD - Create, Read, Update, Delete
@@ -31,8 +30,8 @@ public class UserController {
 
     //Mostrar todos os Usuarios (GET - Read)
     @GetMapping("/todos")
-    public String mostrarUsuarios(){
-        return "Todos os usuarios foram mostrados";
+    public List<UserModel> mostrarUsuarios(){
+        return userService.listarTodosUsuarios();
     }
 
     //Mostrar usuario por id (GET - Read)
