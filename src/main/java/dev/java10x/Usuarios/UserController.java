@@ -23,8 +23,8 @@ public class UserController {
     //O @RequestBody e usado quando eu quero que o usuario mande para min algo que vai compor o corpo da requisição (JSON)
     //@RequestBody - para pegar o valor do corpo da requisição (JSON)
     //vamos pegar esse JSON serializado e transformar em um objeto UserModel e salvar no banco de dados
-    public UserModel criarUsuario(@RequestBody UserModel userModel, @RequestParam Long AtividadeId){
-        return userService.criarNovoUsuario(userModel, AtividadeId);
+    public UserModel criarUsuario(@RequestBody UserModel userModel){
+        return userService.criarNovoUsuario(userModel);
     }
 
     //procurar Usuario por id (GET - Read)

@@ -32,7 +32,7 @@ public class UserModel {
     private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
 
     // Muitos usuários podem estar associados a uma única atividade
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "atividades_id") //Foreing Key ou chave estrangeira para a tabela de atividades
     private AtividadeModel atividade;
 

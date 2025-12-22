@@ -42,12 +42,7 @@ public class UserService {
 
     //criar um novo usuário
     //criar um mét.odo para criar um novo usuário
-    public UserModel criarNovoUsuario(UserModel userModel, Long AtividadeId){
-        AtividadeModel atividade = atividadeRepository
-                .findById(AtividadeId)
-                .orElseThrow(() -> new RuntimeException("Atividade não encontrada"));
-        //associar a atividade ao usuário
-        userModel.setAtividade(atividade);
+    public UserModel criarNovoUsuario(UserModel userModel){
         return userRepository.save(userModel);
     }
 
