@@ -3,6 +3,7 @@ package dev.java10x.Atividades;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AtividadeService {
@@ -20,6 +21,12 @@ public class AtividadeService {
             return List.of(); //retorna uma lista vazia
         }
         return atividadeRepository.findAll();
+    }
+
+    //listar atividades por id
+    public AtividadeModel listarPorId(long id){
+        Optional<AtividadeModel> atividadesById = atividadeRepository.findById(id);
+        return atividadesById.orElse(null); //retorna a atividade se encontrado, caso contrário retorna null
     }
 
 

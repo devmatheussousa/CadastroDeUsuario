@@ -19,6 +19,11 @@ public class AtividadesController {
         return atividadeService.listarTodasAtividades();
     }
 
+    @GetMapping("/todos/{id}")
+    public AtividadeModel listarAtividadePorId(@PathVariable long id){
+        return atividadeService.listarPorId(id);
+    }
+
     //localhost/8080/atividades/criar -> metodo POST
     @PostMapping("/criar")
     public String criarAtividade(){
