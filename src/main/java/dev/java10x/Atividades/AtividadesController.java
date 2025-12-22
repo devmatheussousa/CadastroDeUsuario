@@ -1,5 +1,6 @@
 package dev.java10x.Atividades;
 
+import dev.java10x.Usuarios.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class AtividadesController {
 
     private final AtividadeService atividadeService;
+    private final UserService userService;
 
     @GetMapping
     public List<AtividadeModel> listarAtividades(){
@@ -26,8 +28,8 @@ public class AtividadesController {
 
     //localhost/8080/atividades/criar -> metodo POST
     @PostMapping("/criar")
-    public String criarAtividade(){
-        return "Atividade criada";
+    public AtividadeModel criarAtividade(@RequestBody AtividadeModel atividadeModel){
+        return atividadeService.salvarAtividade(atividadeModel);
     }
 
 

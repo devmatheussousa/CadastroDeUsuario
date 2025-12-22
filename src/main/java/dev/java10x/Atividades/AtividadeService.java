@@ -29,6 +29,11 @@ public class AtividadeService {
         return atividadesById.orElse(null); //retorna a atividade se encontrado, caso contrário retorna null
     }
 
+    //criar um novo método para salvar uma atividade
+    public AtividadeModel salvarAtividade(AtividadeModel atividadeModel){
+        return atividadeRepository.save(atividadeModel);
+    }
+
 
 
 
