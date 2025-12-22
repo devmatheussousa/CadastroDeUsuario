@@ -20,6 +20,10 @@ public class UserService {
     //Lista todos meus Usuario
     //criar um método para listar todos os usuários
      public List<UserModel> listarTodosUsuarios(){
+        //verificar se a lista está vazia
+        if(userRepository.findAll().isEmpty()){
+            return List.of(); //retorna uma lista vazia
+        }
         return userRepository.findAll();
     }
 
