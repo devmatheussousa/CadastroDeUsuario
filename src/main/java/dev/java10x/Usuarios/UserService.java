@@ -35,6 +35,12 @@ public class UserService {
         return userById.orElse(null); //retorna o usuário se encontrado, caso contrário retorna null
     }
 
+    //criar um novo usuário
+    //criar um mét.odo para criar um novo usuário
+    public UserModel criarNovoUsuario(UserModel userModel){
+        return userRepository.save(userModel);
+    }
+
 
 
 
