@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 //@RequiredArgsConstructor
 @Service
@@ -26,6 +27,14 @@ public class UserService {
         }
         return userRepository.findAll();
     }
+
+    //listar Usuario por id
+    //criar um mét-odo para listar um usuário por id
+    public UserModel listarPorId(Long id){
+        Optional<UserModel> userById = userRepository.findById(id);
+        return userById.orElse(null); //retorna o usuário se encontrado, caso contrário retorna null
+    }
+
 
 
 

@@ -37,9 +37,11 @@ public class UserController {
     }
 
     //Mostrar usuario por id (GET - Read)
-    @GetMapping("/todos/id")
-    public String buscarUsuarioPorId(){
-        return "Usuario encontrado por id";
+    //@PathVariable - para pegar o valor da variável de caminho, quando eu quero que o usuario mande para min algo que vai compor a rota (URL)
+    //transforma o meu Long id como parte da minha rota ou URI {id} <- @PathVariable
+    @GetMapping("/todos/{id}")
+    public String buscarUsuarioPorId(@PathVariable Long id){
+        return userService.listarPorId(id).toString(); //toString() - para converter o objeto em uma string
     }
 
     //Alterar dados do Usuario (PUT - Update)
