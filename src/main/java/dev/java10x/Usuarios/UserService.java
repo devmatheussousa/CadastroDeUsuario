@@ -1,5 +1,8 @@
 package dev.java10x.Usuarios;
 
+import dev.java10x.Atividades.AtividadeModel;
+import dev.java10x.Atividades.AtividadeRepository;
+import dev.java10x.Atividades.AtividadeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +13,14 @@ import java.util.Optional;
 @Service
 public class UserService {
 
+    private AtividadeRepository atividadeRepository;
     //Ultilizar injecao de pedencia via construtor quando nao tiver final
     //se tiver final ultiliza @RequidArgsConstructor
     private UserRepository userRepository;
 
-    public UserService(UserRepository userRepository){
+    public UserService(UserRepository userRepository, AtividadeRepository atividadeRepository){
         this.userRepository = userRepository;
+        this.atividadeRepository = atividadeRepository;
     }
 
     //Lista todos meus Usuario
@@ -37,7 +42,12 @@ public class UserService {
 
     //criar um novo usuário
     //criar um mét.odo para criar um novo usuário
-    public UserModel criarNovoUsuario(UserModel userModel){
+    public UserModel criarNovoUsuario(UserModel userModel, Long AtividadeId){
+        AtividadeModel atividade = atividadeRepository
+                .findById(AtividadeId)
+                .orElseThrow(() -> new RuntimeException("Atividade não encontrada"));
+        //associar a atividade ao usuário
+        userModel.setAtividade(atividade);
         return userRepository.save(userModel);
     }
 
