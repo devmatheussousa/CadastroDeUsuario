@@ -3,6 +3,8 @@ package dev.java10x.Usuarios;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 //@RequiredArgsConstructor
 @Service
 public class UserService {
@@ -13,6 +15,12 @@ public class UserService {
 
     public UserService(UserRepository userRepository){
         this.userRepository = userRepository;
+    }
+
+    //Lista todos meus Usuario
+    //criar um método para listar todos os usuários
+     public List<UserModel> listarTodosUsuarios(){
+        return userRepository.findAll();
     }
 
 
