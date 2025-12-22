@@ -1,8 +1,6 @@
 package dev.java10x.Usuarios;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -11,6 +9,47 @@ public class UserController {
     @GetMapping("/welcome")
     public String boasVinda(){
         return "Bem-vindo ao sistema de cadastro de usuários! ";
+    }
+
+
+    /*
+    CRUD - Create, Read, Update, Delete
+     */
+
+    //adicionar Usuario (POST - Create)
+    @PostMapping("/criar")
+    public String criarUsuario(){
+        return "Usuario criado";
+    }
+
+    //procurar Usuario por id (GET - Read)
+    @GetMapping("/buscar")
+    public String buscarUsuario(){
+        return "Usuario encontrado";
+    }
+
+    //Mostrar todos os Usuarios (GET - Read)
+    @GetMapping("/todos")
+    public String mostrarUsuarios(){
+        return "Todos os usuarios foram mostrados";
+    }
+
+    //Mostrar usuario por id (GET - Read)
+    @GetMapping("/todos/id")
+    public String buscarUsuarioPorId(){
+        return "Usuario encontrado por id";
+    }
+
+    //Alterar dados do Usuario (PUT - Update)
+    @PutMapping("/atualizar")
+    public String atualizarUsuario(){
+        return "Usuario atualizado";
+    }
+
+    //Deletar Usuario (DELETE - Delete)
+    @DeleteMapping("/deletar/id")
+    public String deletarUsuarioPorId(){
+        return "Usuario deletado por id com sucesso";
     }
 
 }
