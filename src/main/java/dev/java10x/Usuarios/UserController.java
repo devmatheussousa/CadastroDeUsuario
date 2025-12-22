@@ -11,7 +11,6 @@ public class UserController {
         return "Bem-vindo ao sistema de cadastro de usuários! ";
     }
 
-
     /*
     CRUD - Create, Read, Update, Delete
      */
