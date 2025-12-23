@@ -57,6 +57,26 @@ public class UserService {
         }
     }
 
+    //Atualizar ninja
+
+    /**
+     * Para Atualiza o ninja primeiro devemos passar o id para ele buscar no nosso banco se existe um usuario com esse id
+     * mas devemos passar outro parametro parecido JSON que é o usuario vai atualizar com os novos dados no caso e o UserModel userAtualizado
+     * Se o usuario existe ele vai atualizar os dados com os novos dados que foram passados setando os novos dados no usuario
+     * @param id
+     * @param userAtualizado
+     * @return
+     *
+     * vamos criar uma logica simples depois vamos refatorar para algo mais robusto
+     */
+    public UserModel atualizarUsuario(Long id, UserModel userAtualizado){
+        if(userRepository.existsById(id)){
+            userAtualizado.setId(id);
+            return  userRepository.save(userAtualizado);
+        }
+        return null;
+    }
+
 
 
 

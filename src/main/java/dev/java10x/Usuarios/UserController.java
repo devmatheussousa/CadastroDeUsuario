@@ -42,9 +42,12 @@ public class UserController {
     }
 
     //Alterar dados do Usuario (PUT - Update)
-    @PutMapping("/atualizar")
-    public String atualizarUsuario(){
-        return "Usuario atualizado";
+    //Passa os dois argumentos, o id para buscar o usuario e o userAtualizado para atualizar os dados do usuario
+    //O put vai atulizar toda a estrutura do usuario, ou seja, se eu passar apenas um campo ele vai atualizar apenas aquele campo vai ser atualizado
+    //e se eu passar todos os campos ele vai atualizar todos os campos caso eu nao passe todos os campo os campo que eu nao passar ele vai ficar com null
+    @PutMapping("/atualizar/{id}")
+    public UserModel atualizarUsuario(@PathVariable Long id, @RequestBody UserModel userAtualizado){
+        return userService.atualizarUsuario(id, userAtualizado);
     }
 
     //Deletar Usuario (DELETE - Delete)
