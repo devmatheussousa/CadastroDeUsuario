@@ -44,6 +44,16 @@ public class AtividadeService {
     }
 
 
+    //Atualizar atividade
+    public AtividadeModel atualizarAtividade(Long id, AtividadeModel atividadeAtualizado){
+        if(atividadeRepository.existsById(id)){
+            atividadeAtualizado.setId(id);
+            return atividadeRepository.save(atividadeAtualizado);
+        }
+        return null;
+    }
+
+
 
 
 }
