@@ -31,6 +31,9 @@ public class UserModel {
 
     private String technicalSkills; //habilidades técnicas ex: Java, Spring Boot, SQL
 
+    @Column(name = "level")
+    private String level; //nível de experiência ex: júnior, pleno, sênior
+
     // Muitos usuários podem estar associados a uma única atividade
     @ManyToOne()
     @JoinColumn(name = "atividades_id") //Foreing Key ou chave estrangeira para a tabela de atividades
