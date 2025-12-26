@@ -33,14 +33,14 @@ public class AtividadesController {
     }
 
 
-    @PutMapping("/atualizar")
-    public String atualizarAtividade(){
-        return "Atividade atualizada";
+    //Esse end point é para atualizar uma atividade existente
+    @PutMapping("/atualizar{id}")
+    public AtividadeModel atualizarAtividade(@PathVariable Long id, @RequestBody AtividadeModel atualizarAtivida){
+        return atividadeService.atualizarAtividade(id, atualizarAtivida);
     }
 
     @DeleteMapping("/deletar/{id}")
     public void deletarAtividade(@PathVariable Long id){
         atividadeService.deletarAtividadePorId(id);
     }
-
 }
