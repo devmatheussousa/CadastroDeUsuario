@@ -56,9 +56,13 @@ public class UserController {
     //O put vai atualizar toda a estrutura do usuário, ou seja, se eu passar apenas um campo ele vai atualizar apenas aquele campo vai ser atualizado
     //e se eu passar todos os campos ele vai atualizar todos os campos caso eu não passe todos os campo os campo que eu não passar ele vai ficar com null
     @PutMapping("/atualizar/{id}")
-    public ResponseEntity<UserDTO> atualizarUsuario(@PathVariable Long id, @RequestBody UserDTO userAtualizado) {
+    public ResponseEntity<?> atualizarUsuario(@PathVariable Long id, @RequestBody UserDTO userAtualizado) {
         UserDTO atualizarUser = userService.atualizarUsuario(id, userAtualizado);
-        return ResponseEntity.status(HttpStatus.OK).body(atualizarUser);
+        if(atualizarUser != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(atualizarUser);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erro usuario com id: " + id + " não existe nos nossos registros!");
+        }
     }
 
     //Deletar Usuario (DELETE - Delete)
