@@ -14,8 +14,8 @@ public class UserService {
 
     //Ultilizar injecao de pedencia via construtor quando nao tiver final
     //se tiver final ultiliza @RequidArgsConstructor
-    private UserRepository userRepository;
-    private UserMapper userMapper;
+    private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     public UserService(UserRepository userRepository, UserMapper userMapper) {
         this.userRepository = userRepository;
