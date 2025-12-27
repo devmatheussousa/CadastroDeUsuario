@@ -1,5 +1,8 @@
 package dev.java10x.Atividades;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AtividadeMapper {
 
     //caminho
