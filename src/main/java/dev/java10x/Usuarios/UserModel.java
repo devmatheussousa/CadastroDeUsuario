@@ -13,7 +13,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+@ToString(exclude = {"atividade"})
 public class UserModel {
 
     @Id
