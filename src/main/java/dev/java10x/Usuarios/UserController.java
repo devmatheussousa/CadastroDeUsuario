@@ -41,12 +41,12 @@ public class UserController {
     //@PathVariable - para pegar o valor da variável de caminho, quando eu quero que o usuário mande para min algo que vai compor a rota (URL)
     //transforma o meu Long id como parte da minha rota ou URI {id} <- @PathVariable
     @GetMapping("/todos/{id}")
-    public ResponseEntity<String> buscarUsuarioPorId(@PathVariable Long id) {
+    public ResponseEntity<?> buscarUsuarioPorId(@PathVariable Long id) {
         UserDTO user = userService.listarPorId(id);
         if(user != null) {
-            return ResponseEntity.status(HttpStatus.OK).body("Usuario encontrado: " + user.getName() + " com (id): " + user.getId());
+            return ResponseEntity.status(HttpStatus.OK).body(user);
         }else{
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erro usuario com id: " + id + " não foi encontrado!");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Erro usuario com id: " + id + " não existe nos nossos registros!");
 
         }
     }
